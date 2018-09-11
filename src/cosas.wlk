@@ -46,3 +46,27 @@ object bateriaAntiaerea {
 		}
 	}
 }
+
+object contenedorPortuario {
+	var property cosas = []
+	method peso() = cosas.sum{cosa => cosa.peso()} + 100
+	method peligrosidad() {
+		if (not cosas.isEmpty()){
+			return (cosas.max{cosa => cosa.peligrosidad()}).peligrosidad()
+		} else {
+			return 0
+		}
+	}
+}
+
+object residuosRadioactivos {
+	var property peso = 0
+	method peso() = peso
+	method peligrosidad() = 200
+}
+
+object embalajeDeSeguridad {
+	var property cosaAEmbalar = knightRider
+	method peso() = cosaAEmbalar.peso()
+	method peligrosidad() = cosaAEmbalar.peligrosidad() / 2
+}
