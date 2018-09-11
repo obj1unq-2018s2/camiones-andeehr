@@ -25,7 +25,6 @@ object paqueteDeLadrillos {
 
 object arenaAGranel {
 	var property peso = 0
-	method peso() = peso
 	method peligrosidad() = 1
 }
 
@@ -48,7 +47,7 @@ object bateriaAntiaerea {
 }
 
 object contenedorPortuario {
-	var property cosas = []
+	const cosas = []
 	method peso() = cosas.sum{cosa => cosa.peso()} + 100
 	method peligrosidad() {
 		if (not cosas.isEmpty()){
@@ -61,7 +60,6 @@ object contenedorPortuario {
 
 object residuosRadioactivos {
 	var property peso = 0
-	method peso() = peso
 	method peligrosidad() = 200
 }
 
